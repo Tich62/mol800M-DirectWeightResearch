@@ -1,0 +1,27 @@
+name: Verify ZzzOps control policy
+
+on:
+  pull_request:
+    paths:
+      - '.zzzops/**'
+      - 'AGENTS.md'
+      - 'scripts/**'
+      - '.github/workflows/verify-control.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-control-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout reviewed source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check source-bound policy and file types
+        run: python3 -B scripts/verify_control_policy.py
+      - name: Run synthetic-only control tests
+        run: python3 -B -m unittest discover -s scripts -p 'test_*.py' -v
