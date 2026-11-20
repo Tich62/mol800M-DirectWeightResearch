@@ -1,6 +1,6 @@
 # ZzzOps project policy audit
 
-Status: complete. Reviewer: Tich62. Revision: 2.
+Status: complete. Reviewer: Tich62. Revision: 4.
 
 ## Evidence and decisions
 
@@ -128,5 +128,7 @@ Status: complete. Reviewer: Tich62. Revision: 2.
 | --- | --- | --- | --- |
 | 2026-11-20 | ZzzOps initialization | Created pending revision 1 | Confirmed agent-generated draft; explicit policy review still required. |
 | 2026-11-20 | Tich62 | Reviewed policy revision 2 | Approved: backend, git_review_release, execution_continuation, verification_testing, code_quality, dependencies_tooling, security_privacy_compliance, documentation_style, deployment_resources, engineering_rigor, workflow_adherence, automated_design, autonomy_approval_parallelism; source digest sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61. |
+| 2026-11-21 | ZzzOps initialization | Created pending revision 3 | Confirmed agent-generated draft; explicit policy review still required. |
+| 2026-11-21 | Tich62 | Reviewed policy revision 4 | Approved: backend, git_review_release, execution_continuation, verification_testing, code_quality, dependencies_tooling, security_privacy_compliance, documentation_style, deployment_resources, engineering_rigor, workflow_adherence, automated_design, autonomy_approval_parallelism; source digest sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609. |
 
 The machine-readable authority is [POLICY.json](POLICY.json); this file is its human audit view.

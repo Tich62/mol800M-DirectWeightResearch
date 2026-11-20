@@ -1,27 +1,23 @@
 {
   "approval": {
-    "date": "2026-11-20",
-    "digest": "sha256:1f5f573a5bde82d5f0c1f41218e53634ba7172865cf1b3b482bf23c94d279a7b",
+    "date": "2026-11-21",
+    "digest": "sha256:e100c47a3fc33fb8f4196ac8080a569fbdddce50c879ae5a9604f825393ee234",
     "reviewer": "Tich62"
   },
   "backend": "github_issues",
   "bindings": {
     "audit": {
-      "digest": "sha256:6473a7e5f74bc2ac496a4faaa9a67ba4f78531a93c3d5825e87da83c4bf28256",
+      "digest": "sha256:f1c32924fffc3a89ac55a9f3d29fb7f3b8c01b94f2e23c8831a8db411b5cb0f5",
       "path": ".zzzops/PROJECT_AUDIT.md"
     },
     "project": {
-      "digest": "sha256:288c09df605aebd9dc86647085567c4c834618360274f65d28595b2c4def90a8",
+      "digest": "sha256:cc402f8f9e9a0ad94f13533603839550cb2736b942f43970f0652dcecc7a1ff9",
       "path": ".zzzops/PROJECT.md"
     }
   },
   "charter": {
     "acceptance_criteria": [
-      "G1 Independent authenticated protected worker provenance, key/response/replay custody, effective rights, source-bound QA.",
-      "G2 Owner-approved bounded 1750-second model lifecycle, cancellation, memory floors and complete rollback.",
-      "G3 Six exposed coding cases by two prompts, exact matched greedy decoding, complete raw/EOS and prompt-control accounting.",
-      "G4 One source-pinned direct-weight-only selective intervention with independent approval and no teachers/LoRA/fine-tuning.",
-      "G5 Independently controlled unseen paired quality/retention, significance, checkpoint hashes, hardware metrics and QA approval."
+      "As of 2026-11-21, SmolLM2 research acceptance remains UNVERIFIED and UNACCEPTED: G1-G5 are open obligations requiring independently authenticated evidence before any research-complete claim."
     ],
     "beneficiaries": [
       "The owner of the isolated local Smol800M direct-weight research experiment"
@@ -30,7 +26,13 @@
       "The GitHub research-control repository is control-only (whether private or public); never upload local weights, datasets, raw logs, private local paths, security receipts, or secrets without separate review.",
       "Do not modify protected Luna services or bypass STOP/CANCEL; each full-model run requires genuine independent owner grant and verified rollback.",
       "No LoRA, conventional fine-tuning, teacher distillation or fake performance claims; preserve all original model checkpoints.",
-      "Use separate clean Git checkout; never link or automatically push the frozen ACTIVE source tree to public GitHub."
+      "Use separate clean Git checkout; never link or automatically push the frozen ACTIVE source tree to public GitHub.",
+      "G1 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: Independent authenticated protected worker provenance, key/response/replay custody, effective rights, source-bound QA.",
+      "G2 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: Owner-approved bounded 1750-second model lifecycle, cancellation, memory floors and complete rollback.",
+      "G3 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: Six exposed coding cases by two prompts, exact matched greedy decoding, complete raw/EOS and prompt-control accounting.",
+      "G4 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: One source-pinned direct-weight-only selective intervention with independent approval and no teachers/LoRA/fine-tuning.",
+      "G5 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: Independently controlled unseen paired quality/retention, significance, checkpoint hashes, hardware metrics and QA approval.",
+      "ZzzOps PROJECT.md Status: complete denotes policy approval only, NEVER completion of G1-G5 research milestones or proof of unseen model improvement."
     ],
     "kpis": [
       {
@@ -85,6 +87,18 @@
       "change": "Reviewed policy revision 2",
       "date": "2026-11-20",
       "reason": "Approved: backend, git_review_release, execution_continuation, verification_testing, code_quality, dependencies_tooling, security_privacy_compliance, documentation_style, deployment_resources, engineering_rigor, workflow_adherence, automated_design, autonomy_approval_parallelism; source digest sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61."
+    },
+    {
+      "actor": "ZzzOps initialization",
+      "change": "Created pending revision 3",
+      "date": "2026-11-21",
+      "reason": "Confirmed agent-generated draft; explicit policy review still required."
+    },
+    {
+      "actor": "Tich62",
+      "change": "Reviewed policy revision 4",
+      "date": "2026-11-21",
+      "reason": "Approved: backend, git_review_release, execution_continuation, verification_testing, code_quality, dependencies_tooling, security_privacy_compliance, documentation_style, deployment_resources, engineering_rigor, workflow_adherence, automated_design, autonomy_approval_parallelism; source digest sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609."
     }
   ],
   "initialized": true,
@@ -119,6 +133,18 @@
         "id": "E-005",
         "kind": "observed",
         "source": "2026-11-20 authenticated GitHub CLI gh repo view and GitHub connected get_repo"
+      },
+      {
+        "finding": "Research G1-G5 have not received independently authenticated completion acceptance; protected owner authorization is not established and no unseen model-quality gain is verified.",
+        "id": "E-006",
+        "kind": "observed",
+        "source": "SHA-256-pinned approved control-policy charter and independent research completion file"
+      },
+      {
+        "finding": "Renderer unconditionally places [x] before each acceptance_criteria string; project Status complete means initialized policy, not completed model research.",
+        "id": "E-007",
+        "kind": "observed",
+        "source": "Installed ZzzOps v2.1.0 policy.py renderer read-only source"
       }
     ],
     "schema_version": 1,
@@ -145,8 +171,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -209,8 +235,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -289,8 +315,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -368,8 +394,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -430,8 +456,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -479,8 +505,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -516,8 +542,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -572,8 +598,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -621,8 +647,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -691,8 +717,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -769,8 +795,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -860,8 +886,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -1003,8 +1029,8 @@
         "required": true,
         "review": {
           "approved": true,
-          "date": "2026-11-20",
-          "reviewed_digest": "sha256:ad8e7fc1a37615a8e32158ec5e7fbf71dfd81d78e4fb9be37ea6c52f6260de61",
+          "date": "2026-11-21",
+          "reviewed_digest": "sha256:a62bbad24d466b889ea33a1f2758d9afbf704ab2b1f72d262cef58098596f609",
           "reviewer": "Tich62"
         },
         "settings": {
@@ -1084,6 +1110,6 @@
     "identity": "Tich62/mol800M-DirectWeightResearch",
     "remote": "https://github.com/Tich62/mol800M-DirectWeightResearch.git"
   },
-  "revision": 2,
+  "revision": 4,
   "schema_version": 1
 }

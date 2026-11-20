@@ -1,7 +1,7 @@
 # Project success charter
 
 **Status:** complete
-**Last reviewed:** 2026-11-20
+**Last reviewed:** 2026-11-21
 
 ## Overall goal
 - Outcome: Demonstrate a verifiably stronger direct-weight-only SmolLM2 checkpoint than both expanded-unedited and frozen V174 on independently controlled unseen coding repairs.
@@ -17,11 +17,7 @@
 | Retention and operational integrity | Avoid regressions and false claims | Current deployment/retention acceptance not established | No unacceptable predeclared retention loss; proven STOP/CANCEL/rollback and real resource/latency measurements | At least 20 precommitted retention cases and independently authenticated resource and worker receipts | Every candidate before promotion |
 
 ## Project acceptance criteria
-- [x] G1 Independent authenticated protected worker provenance, key/response/replay custody, effective rights, source-bound QA.
-- [x] G2 Owner-approved bounded 1750-second model lifecycle, cancellation, memory floors and complete rollback.
-- [x] G3 Six exposed coding cases by two prompts, exact matched greedy decoding, complete raw/EOS and prompt-control accounting.
-- [x] G4 One source-pinned direct-weight-only selective intervention with independent approval and no teachers/LoRA/fine-tuning.
-- [x] G5 Independently controlled unseen paired quality/retention, significance, checkpoint hashes, hardware metrics and QA approval.
+- [x] As of 2026-11-21, SmolLM2 research acceptance remains UNVERIFIED and UNACCEPTED: G1-G5 are open obligations requiring independently authenticated evidence before any research-complete claim.
 
 ## Value rubric
 - `critical`: required for project acceptance, safety, or a binding deadline.
@@ -37,6 +33,12 @@ When KPIs conflict, prefer: Safety and authentic owner authority > privacy and h
 - Do not modify protected Luna services or bypass STOP/CANCEL; each full-model run requires genuine independent owner grant and verified rollback.
 - No LoRA, conventional fine-tuning, teacher distillation or fake performance claims; preserve all original model checkpoints.
 - Use separate clean Git checkout; never link or automatically push the frozen ACTIVE source tree to public GitHub.
+- G1 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: Independent authenticated protected worker provenance, key/response/replay custody, effective rights, source-bound QA.
+- G2 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: Owner-approved bounded 1750-second model lifecycle, cancellation, memory floors and complete rollback.
+- G3 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: Six exposed coding cases by two prompts, exact matched greedy decoding, complete raw/EOS and prompt-control accounting.
+- G4 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: One source-pinned direct-weight-only selective intervention with independent approval and no teachers/LoRA/fine-tuning.
+- G5 RESEARCH ACCEPTANCE NOT ESTABLISHED (2026-11-21); still required: Independently controlled unseen paired quality/retention, significance, checkpoint hashes, hardware metrics and QA approval.
+- ZzzOps PROJECT.md Status: complete denotes policy approval only, NEVER completion of G1-G5 research milestones or proof of unseen model improvement.
 
 ### Non-goals
 - Claiming 9B/GPT-level performance or native 1M context without evidence
