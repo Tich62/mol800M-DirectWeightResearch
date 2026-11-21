@@ -8,6 +8,10 @@ import subprocess
 
 EXPECTED_REPOSITORY = "Tich62/mol800M-DirectWeightResearch"
 MAX_CONTROL_FILE_BYTES = 256_000
+# SHA-256 of the exact policy bytes from the separately approved control PR head.
+# This pin is review-bound, NOT a signature or standalone owner authorization.
+# Any legitimate policy revision requires its own review and an updated pin.
+EXPECTED_REVIEWED_POLICY_SHA256 = "49bee026d18ff566808672a03cc0983b698e47b69f68b55999effbc19a3cc684"
 # This is a control-only repo: new paths need an explicit code review.
 ALLOWED_SOURCE_FILES = frozenset({
     "README.md", "AGENTS.md",
@@ -75,7 +79,12 @@ def verify(root, files=None):
     if failures:
         return failures
     try:
-        policy = json.loads(policy_path.read_text(encoding="utf-8"))
+        # A syntactically valid, but unreviewed, POLICY.json must not pass.
+        # Verify raw bytes before parsing so JSON reformatting also needs review.
+        policy_bytes = policy_path.read_bytes()
+        if hashlib.sha256(policy_bytes).hexdigest() != EXPECTED_REVIEWED_POLICY_SHA256:
+            failures.append("policy bytes differ from reviewed source snapshot")
+        policy = json.loads(policy_bytes.decode("utf-8"))
         if policy.get("initialized") is not True:
             failures.append("ZzzOps project not initialized")
         if policy.get("backend") != "github_issues":
