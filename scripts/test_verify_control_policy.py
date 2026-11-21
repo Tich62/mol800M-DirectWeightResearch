@@ -1,4 +1,5 @@
 """Synthetic-only tests of the ZzzOps source-bound policy check."""
+import json
 from pathlib import Path
 import shutil
 import tempfile
@@ -110,6 +111,52 @@ class ControlPolicyTests(unittest.TestCase):
         with (self.root / ".zzzops/POLICY.json").open("a", encoding="utf-8") as out:
             out.write("\nsynthetic unauthorized change\n")
         self.assertTrue(verify(self.root, self.files))
+
+    def test_valid_json_policy_decision_tamper_is_rejected(self):
+        policy_path = self.root / ".zzzops/POLICY.json"
+        policy = json.loads(policy_path.read_text(encoding="utf-8"))
+        self.assertTrue(policy["initialized"])
+        self.assertTrue(all(
+            section["review"]["approved"] is True
+            for section in policy["policy"]["sections"]
+        ))
+        # Preserve approval fields and all reviewed digests unchanged.
+        policy["policy"]["sections"][0]["decision"] = "synthetic_unapproved_change"
+        policy_path.write_text(
+            json.dumps(policy, indent=2) + "\n", encoding="utf-8"
+        )
+        self.assertIn(
+            "policy bytes differ from reviewed source snapshot",
+            verify(self.root, self.files),
+        )
+
+    def test_valid_json_security_settings_tamper_is_rejected(self):
+        policy_path = self.root / ".zzzops/POLICY.json"
+        policy = json.loads(policy_path.read_text(encoding="utf-8"))
+        target = next(
+            section for section in policy["policy"]["sections"]
+            if section["id"] == "security_privacy_compliance"
+        )
+        target["settings"]["synthetic_unreviewed_boolean"] = True
+        policy_path.write_text(
+            json.dumps(policy, indent=2) + "\n", encoding="utf-8"
+        )
+        self.assertIn(
+            "policy bytes differ from reviewed source snapshot",
+            verify(self.root, self.files),
+        )
+
+    def test_valid_json_approval_digest_tamper_is_rejected(self):
+        policy_path = self.root / ".zzzops/POLICY.json"
+        policy = json.loads(policy_path.read_text(encoding="utf-8"))
+        policy["approval"]["digest"] = "sha256:" + "a" * 64
+        policy_path.write_text(
+            json.dumps(policy, indent=2) + "\n", encoding="utf-8"
+        )
+        self.assertIn(
+            "policy bytes differ from reviewed source snapshot",
+            verify(self.root, self.files),
+        )
 
     def test_valid_control_files_remain_accepted(self):
         self.assertEqual(verify(self.root, self.files), [])
